@@ -1,0 +1,10 @@
+#pagination
+  if locals.currentPage && locals.totalPages
+    p
+      if locals.currentPage > 1
+        a(href='?page=' + (locals.currentPage - 1)) Prev
+        | &nbsp;|&nbsp;
+      | Page #{locals.currentPage} of #{locals.totalPages}
+      if locals.currentPage < locals.totalPages
+        | &nbsp;|&nbsp;
+        a(href='?page=' + (locals.currentPage + 1)) Next
