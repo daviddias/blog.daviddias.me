@@ -3,6 +3,7 @@ extends layout
 block body
   body(id= locals.bodyId)
     include header
+    
     each post in locals.postData
       article(class=post.type)
         .row
@@ -15,4 +16,5 @@ block body
     .row.pages
           .paginationWrap           
             include pagination
+    
     include footer

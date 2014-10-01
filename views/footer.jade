@@ -10,3 +10,11 @@ footer
       .archives
         h2 Blog archives
         include nav-archive
+        
+        - if (locals.allTagMap)
+          h2 Tag categories
+            .taglist
+              each tag, slug in allTagMap
+                - if (tag && slug)
+                  a(href='/tag/#{slug}', alt='#{tag}', title='#{tag}') !{tag.replace(' ', '&nbsp;')}
+                  | 

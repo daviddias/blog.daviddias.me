@@ -1,7 +1,7 @@
 ---
 date: 2014-02-01 10:00:00 GMT
 slug: get-your-feet-wet-with-docker
-tags: docker node meetup 
+tags: docker, node.js, meetup, lisbon 
 title: Get your feet wet with docker
 ---
 

@@ -1,7 +1,7 @@
 ---
 date: 2014-07-20 17:00:00 GMT
-slug: sample-post
-tags: sample
+slug: TriConf-2014
+tags: triconf
 title: TriConfidents
 ---
 
