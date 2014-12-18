@@ -19,7 +19,7 @@ Resource Discovery was what brought me to start this research and understand mor
 
 #### unstructured
 
-'Unstructured' P2P networks don't require or define any constraints for data placement, some of the most known are Napster, Kazaa and Gnutella for the file sharing capabilities. There is however a `caveat' in the Unstructured networks, by not having an inherent way of indexing the data present in the network, performing a lookup results of the cost of asking several nodes the whereabouts of a specific file or chunk of the file, creating a huge performance impact with an increasing number of nodes. 
+Unstructured P2P networks don't require or define any constraints for data placement, some of the most known are Napster, Kazaa and Gnutella for the file sharing capabilities. There is however a 'caveat' in the Unstructured networks, by not having an inherent way of indexing the data present in the network, performing a lookup results of the cost of asking several nodes the whereabouts of a specific file or chunk of the file, creating a huge performance impact with an increasing number of nodes. 
 
 In order to calibrate the performance, Unstructured P2P networks offer several degrees of decentralization, one example is the evolution from [Gnutella 0.4][Definition2003] to Gnutella 0.6([A][T.Klingberg2002], [B][Ripeanu2002a]) , which added the concept of super nodes, entities responsible for storing the lookup tables for the files in parts of the network they are responsible for, increasing the performance, but with the cost of adding centralized, single points of failure. 
 
@@ -122,26 +122,26 @@ One of the questions I'm currently presented is to identify would be the consequ
 There are also some other performance bottlenecks we noticed that arise from the single threaded nature of JavaScript. These aspects were considered in our performance evaluation, such as:
 
 - item logging - Since V8 runs in a single thread, any synchronous operation will block the event loop and add delay to the whole processing, although these logs are essential for us to assess the efficiency of the infrastructure, they are not vital to the job.
-- delay added - One technique we used to simulate the network delay is to use the `setTimeout' native function of V8's JavaScript implementation, since this function is unable to receive floating millisecond values. Moreover, since `setTimeout' does not necessarily guarantee that the function will be executed in X amount of milliseconds, due to the nature of the event loop, there is always an extra delay added implicitly to the operation in the order of 1 to 3 ms.
+- delay added - One technique we used to simulate the network delay is to use the `setTimeout` native function of V8's JavaScript implementation, since this function is unable to receive floating millisecond values. Moreover, since `setTimeout` does not necessarily guarantee that the function will be executed in X amount of milliseconds, due to the nature of the event loop, there is always an extra delay added implicitly to the operation in the order of 1 to 3 ms.
 - tasks can not be sent in parallel - A node has to send each individual computing unit sequentially and independently, meaning that if we divide a job into 2000 for e.g, each task will have to wait for the previous to be sent.
 
 All of these concerns were studied and will be tackled in future work.
 
 <!-- ## references -->
 
-[Milojicic2003]: http://daviddias.me
-[Definition2003]: http://daviddias.me
-[T.Klingberg2002]: http://daviddias.me
-[Ripeanu2002a]: http://daviddias.me
-[Ranjan2006]: http://daviddias.me
-[Cohen2009]: http://daviddias.me
-[Bakhtiari]: http://daviddias.me
-[Kargerl]: http://daviddias.me
-[Preneel1999]: http://daviddias.me
-[D.Eastlake3rdMotorola;P.JonesSystems2001]: http://daviddias.me
-[Stoica2001]: http://daviddias.me
-[Rowstron2001]: http://daviddias.me
-[Zhao2001]: http://daviddias.me
-[Bharambe]: http://daviddias.me
-[Maymounkov]: http://daviddias.me
-[Handley]: http://daviddias.me
+[Milojicic2003]: http://www.cs.kau.se/cs/education/courses/dvad02/p2/seminar4/Papers/HPL-2002-57R1.pdf
+[Definition2003]: http://www.mendeley.com/research/gnutella-protocol-specification-v0-4/
+[T.Klingberg2002]: http://rfc-gnutella.sourceforge.net/src/rfc-0_6-draft.html
+[Ripeanu2002a]: http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=990433
+[Ranjan2006]: http://pdf.aminer.org/000/223/617/a_resource_organizing_protocol_for_grid_based_on_bounded_two.pdf
+[Cohen2009]: http://bittorrent.org/beps/bep_0003.html
+[Bakhtiari]: http://www.mendeley.com/research/cryptographic-hash-functions-survey
+[Kargerl]: http://www.mendeley.com/catalog/consistent-hashing-random-trees-distributed-caching-protocols-relieving-hot-spots-world-wide-web
+[Preneel1999]: http://www.mendeley.com/catalog/state-cryptographic-hash-functions
+[D.Eastlake3rdMotorola;P.JonesSystems2001]: http://www.mendeley.com/research/rfc-3174-secure-hash-algorithm-1-sha1
+[Stoica2001]: http://www.mendeley.com/research/chord-scalable-peertopeer-lookup-service-internet-4
+[Rowstron2001]: http://www.mendeley.com/catalog/pastry-scalable-decentralized-object-location-routing-largescale-peertopeer-systems
+[Zhao2001]: http://www.mendeley.com/catalog/tapestry-infrastructure-faulttolerant-widearea-location-routing
+[Bharambe]: http://www.mendeley.com/research/mercury-supporting-scalable-multiattribute-range-queries
+[Maymounkov]: http://www.mendeley.com/catalog/kademlia-peertopeer-information-system-based-xor-metric
+[Handley]: http://www.mendeley.com/catalog/scalable-content-addressable-network/
