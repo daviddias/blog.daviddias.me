@@ -42,15 +42,14 @@ The table below presents a sintesized view of each structured P2P algorithm with
 [Mercury][Bharambe], a structured P2P network that uses a non DHT model, was designed to enable range queries over several attributes that data can be dimensioned on, which is desired on searches over keywords in several documents of text. Mercury design offers an explicit load balancing without the use of cryptographic hash functions, organizing the data in a circular way, named `attribute hubs'.
  
 ## what's current available on the WebRTC space (on the resource discovery area)
-  [ ] peerCDN
-  [ ] streamroot
-  [ ] academia
-`still to write about`
+ 
+There has been several sucessful attempts to levarage the ability for resource sharing through WebRTC, to build a new generation of Content Delivery Networks (CDN), offloading it from a server. Some of the most known systems are: [PeerCDN][PeerCDN], [StreamRoot][PeerCDN] (Production Systems)and [Maygh][Maygh] (Academic Research).
 
+These services provide, however, a resource discovery lookup system through a centralized server, which contains information of the fragment that each client contains, meaning that a client will always have to contact the server first in order to fetch data from one of the other peers.
 
 ## webrtc-ring
 
-`webrtc-ring` was created with the goal of being able to perform resource discovery from a browser, avoiding to have a hit a server. The logic is encapsulated in a simple Node.js module, [webrtc-ring](http://npmjs.org/webrtc-ring) and since we are talking about WebRTC, proper signaling is also provided for this case scenario, through [webrtc-ring-signaling-server](https://github.com/diasdavid/webrtc-ring-signaling-server).
+`webrtc-ring` was created with the goal to be able to perform resource discovery from a browser, avoiding hitting a server to identify where the resource is located. The logic is encapsulated in a simple Node.js module, [webrtc-ring](http://npmjs.org/webrtc-ring) and since we are talking about WebRTC, proper signaling is also provided for this case scenario, through [webrtc-ring-signaling-server](https://github.com/diasdavid/webrtc-ring-signaling-server).
 
 `webrtc-ring` offers a convinient manner to propagate messages in a P2P WebRTC network, delivering the respective message to the Node responsible for the ID range of the message, it does not handle however, storing of any data delivered, that is the developer responsability to decide what to do with that information.
 
@@ -145,3 +144,7 @@ All of these concerns were studied and will be tackled in future work.
 [Bharambe]: http://www.mendeley.com/research/mercury-supporting-scalable-multiattribute-range-queries
 [Maymounkov]: http://www.mendeley.com/catalog/kademlia-peertopeer-information-system-based-xor-metric
 [Handley]: http://www.mendeley.com/catalog/scalable-content-addressable-network/
+
+[PeerCDN]: https://peercdn.com/
+[StreamRoot]: http://www.streamroot.io/
+[Maygh]: http://dl.acm.org/citation.cfm?id=2465379
