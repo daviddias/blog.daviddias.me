@@ -35,16 +35,18 @@ Evaluating the DHT Structured P2P networks raises identifiable issues, that resu
 
 The table below presents a sintesized view of each structured P2P algorithm with regards to their complexity.
 
-![](/img/webrtc-ring/structured-summary-P2P.png)
+![](/img/webrtc-ring/structured-summary-p2p.png)
 
 #### structured without a DHT
 
 [Mercury][Bharambe], a structured P2P network that uses a non DHT model, was designed to enable range queries over several attributes that data can be dimensioned on, which is desired on searches over keywords in several documents of text. Mercury design offers an explicit load balancing without the use of cryptographic hash functions, organizing the data in a circular way, named `attribute hubs'.
-<!-- 
+ 
 ## what's current available on the WebRTC space (on the resource discovery area)
   [ ] peerCDN
   [ ] streamroot
-  [ ] check the papers -->
+  [ ] academia
+`still to write about`
+
 
 ## webrtc-ring
 
