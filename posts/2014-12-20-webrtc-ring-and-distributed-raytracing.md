@@ -84,7 +84,7 @@ For the tests, only a single machine was used in two different scenarios, one wi
 ![](/img/webrtc-ring/3_25.png)
 ![](/img/webrtc-ring/4_2500.png)
 
-One interesting fact is that a much better performance was obtained by reducing the granularity of which ray-tracing job was divided into, as we can see on. This happens due to two factors: a) since there are a lower number of tasks to be run by other browsers, the message routing overhead gets reduced; b) the second factor is that since this system was tested using a single machine and a networked simulated delay. When the number of tasks is too large, the workers in the browser are in fact competing for CPU resources (to execute tasks and to forward messages among them). This creates a scenario, where more nodes/workers actually make the system slower, since this is a much more strict and resource constrained scenario, than a real example with browsers executing in different machines.
+One interesting fact is that a much better performance was obtained by reducing the granularity of the ray-tracing job. This happens due to two factors: a) since there are a lower number of tasks to be run by other browsers, the message routing overhead gets reduced; b) the second factor is that since this system was tested using a single machine and a networked simulated delay, when the number of tasks is too large, the workers in the browser are in fact competing for CPU resources (to execute tasks and to forward messages among them). This creates a scenario, where more nodes/workers actually make the system slower, since this is a much more strict and resource constrained scenario, than a real example with browsers executing in different machines.
 
 In a real world example, the actual execution time would be bounded by:
 
@@ -114,13 +114,13 @@ It was observed that opening 25 browser tab instances, creating an individual no
 
 Reducing the number of hops in the ring is also important to reduce messaging overhead and delay. Currently, there is address space for `2^160` peers available, creating a message routing worst case scenario of `2^160 - 1` hops for a message to reach to the node with a nodeID previous to the current Node in the ring.
 
-One of the questions I'm currently presented is to identify would be the consequences of reducing the number of bits available per nodeID (currently 160) and therefore, reducing the number of fingers needed to implement a version more close to the Chord routing algorithm, or if there is a way to adjust the size of the address space depending on the service needs, creating smaller rings that are easier to manipulate and propagate messages.
+One of the questions I'm currently presented is to identify if there would be the consequences from reducing the number of bits available per nodeID (currently 160) and therefore, reducing the number of fingers needed to implement a version more close to the Chord routing algorithm, or if there is a way to adjust the size of the address space depending on the service needs, creating smaller rings that are easier to manipulate and propagate messages.
 
-There are also some other performance bottlenecks we noticed that arise from the single threaded nature of JavaScript. These aspects were considered in our performance evaluation, such as:
+There are also some other performance bottlenecks noticed that arise from the single threaded nature of JavaScript. These aspects were considered in our performance evaluation, such as:
 
 - item logging - Since V8 runs in a single thread, any synchronous operation will block the event loop and add delay to the whole processing, although these logs are essential for us to assess the efficiency of the infrastructure, they are not vital to the job.
-- delay added - One technique we used to simulate the network delay is to use the `setTimeout` native function of V8's JavaScript implementation, since this function is unable to receive floating millisecond values. Moreover, since `setTimeout` does not necessarily guarantee that the function will be executed in X amount of milliseconds, due to the nature of the event loop, there is always an extra delay added implicitly to the operation in the order of 1 to 3 ms.
-- tasks can not be sent in parallel - A node has to send each individual computing unit sequentially and independently, meaning that if we divide a job into 2000 for e.g, each task will have to wait for the previous to be sent.
+- delay added - One technique used to simulate the network delay is to use the `setTimeout` native function of V8's JavaScript implementation, since this function is unable to receive floating millisecond values. Moreover, since `setTimeout` does not necessarily guarantee that the function will be executed in X amount of milliseconds, due to the nature of the event loop, there is always an extra delay added implicitly to the operation in the order of 1 to 3 ms.
+- tasks can not be sent in parallel - A node has to send each individual computing unit sequentially and independently, meaning that if job is divided into 2000 for e.g, each task will have to wait for the previous to be sent.
 
 All of these concerns were studied and will be tackled in future work.
 
