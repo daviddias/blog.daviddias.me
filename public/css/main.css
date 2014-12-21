@@ -1,15 +1,3 @@
-/*@font-face {
-    font-family: 'existencelight';
-    src: url('/fonts/existence_light_macroman/Existence-Light-webfont.eot');
-    src: url('/fonts/existence_light_macroman/Existence-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/existence_light_macroman/Existence-Light-webfont.woff') format('woff'),
-         url('/fonts/existence_light_macroman/Existence-Light-webfont.ttf') format('truetype'),
-         url('/fonts/existence_light_macroman/Existence-Light-webfont.svg#existencelight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}*/
-
-
 *,
 *:before,
 *:after {
@@ -19,7 +7,8 @@
 
 html,
 body {
-  font-size: 100%; }
+  font-size: 100%; 
+}
 
 body {
   background: white;
@@ -27,7 +16,8 @@ body {
   padding: 0;
   margin: 0;
   /*font-family: 'existencelight', sans-serif;*/
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;*/
+  font-family: 'Asap', sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -1053,7 +1043,7 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #03c03c;
+  color: #0474ba;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
@@ -1077,7 +1067,8 @@ p {
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
   /*font-family: 'existencelight', sans-serif;*/
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;*/
+  font-family: 'Asap', sans-serif;
   /*font-weight: bold;*/
   font-style: normal;
   color: #222222;
@@ -1133,7 +1124,7 @@ small {
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
-  color: #006b3c; }
+  color: #0474ba; }
 
 /* Lists */
 ul,
@@ -4261,7 +4252,7 @@ a.th {
     max-width: 800px; }
 
 body {
-  font: 12px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font: 12px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   color: #323232; }
 
 h1 {
@@ -4480,4 +4471,10 @@ p {
   /*font-family: 'existencelight', sans-serif;*/
   font-size: 14px;
   /*font-weight: 700; */
+}
+
+
+body {
+  /*background-color: #fffefb;*/
+
 }

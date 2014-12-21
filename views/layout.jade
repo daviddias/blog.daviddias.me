@@ -1,14 +1,17 @@
 doctype html
 head
-  link(rel="stylesheet", href="/css/main.css")
+  meta(name="description", content= blogBio)
+  meta(charset="utf-8")
+  meta(name="viewport", content="width=device-width,initial-scale=1.0") 
+
   - if (locals.pageTitle)
     title!= locals.pageTitle + ' | ' + locals.blogTitle
   - else
     title= locals.blogTitle
   link(rel="alternate", type="application/rss+xml", href= locals.rssUrl, title= locals.blogTitle)
-  meta(name="description", content= blogBio)
-  meta(charset="utf-8")
-  meta(name="viewport", content="width=device-width,initial-scale=1.0")
+
+  link(rel='stylesheet',  type='text/css',  href='http://fonts.googleapis.com/css?family=Asap')
+  link(rel="stylesheet", href="/css/main.css")
   script(src="/js/_analytics.js")
 
 block body
