@@ -7,6 +7,9 @@ title: webrtc-explorer - Resource Discovery for decentralized browser networks
 
 Following up the thread on my last [post](/2014/12/20/webrtc-ring), the quest to build a way to have decentralized browser communications hasn't ended I'm happy to share with you one of latest developments. 
 
+
+> **UPDATE:** The talk I've delivered at [OpoJS (Oporto JS meetup)](https://twitter.com/opojs), has been published here: https://www.youtube.com/watch?v=fNQGGGE__zI
+
 ## Enter [webrtc-explorer](http://npmjs.org/webrtc-explorer)
 
 [`webrtc-explorer`](http://npmjs.org/webrtc-explorer) brings a Chord based routing scheme to the browser, using WebRTC as the layer of transport, for fully decentralized communications and interactions between the actors of the network. In another words, you get a DHT for browser communications.
