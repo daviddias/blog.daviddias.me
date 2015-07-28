@@ -36,7 +36,8 @@ The code is and remains fully open source, I welcome you to explore it:
 
 I've recorded a small video showcasing webrtc-explorer running:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kjwIjoENCRE" frameborder="0" allowfullscreen></iframe>
+
+<iframe src="https://player.vimeo.com/video/134697532" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 > **  You can see how I'm not familiar with the concept of being recorded, I'm sorry for the humming, mumbling and for repeating myself.
 
