@@ -13,7 +13,7 @@ title: Real Time Communications - The P2P applications challenges and how WebRTC
   - P2P architecture stack
     - enumerate issues and things we have to have to overcome them
   - WebRTC Stack
-    - describe what is going to be analised
+    - describe what is going to be analised (what WeBRTC also offers, but that will not be covered, like getUserMedia and Statistics in this post)
     - Establishing a Connection
       - Stun
       - Turn
@@ -42,7 +42,7 @@ To some extent, since its inception, WebRTC has been responsible for revolutioni
 
 # Motivation 
 
-Majority of the WebRTC overviews are focused on easy to use and API interface, althought that is the reason why its growing so much, it is interesting also to look how common P2P application issues were tackled and what other P2P architectures can learn from it and hopefully, even reuse
+The majority of WebRTC analysis posts and talks focus in understanding how WebRTC works from the API standpoint, namely the RTCPeerConnection, RTCDataChannel and getUserMedia that enable us to establish a connection between peers and get access to user media like a camera or a microphone respectively. One of the major reasons why WebRTC adoption has been growing as much is due to these APIs, which represent better primitives Real Time Communications. Nevertheless it is also interesting to understand how WebRTC tackles each of the obstacles P2P Applications have to face, so that developers can fully understand the full weigth of developing a P2P app, plus exposing the techniques, protocols and technologies used so that other P2P apps can learn from WebRTC Stack.
 
 # Peer-to-Peer Application Stack
 
@@ -50,15 +50,14 @@ Making P2P applications takes us to build network agents with a 'dialing' and 'l
 
 There are 3 main questions we have to answer when developing a P2P Application and from these questions, an application architecture and network topologies emerges, there isn't any one true answer (protocol or technology) that can answer these questions and it is important to have in mind that an answer can overlap or require or reuse one of the others. These are:
 
-- How will a peer be able to find another peers in the network.
+- How will a peer be able to discover the whereabouts of another peers in the network.
 - How to open successfuly a connection between any two peers, taking into account several network scenarioes and ways to leverage the best out of that connection.
 - How can we announce and discover resources to the network, so they can be used by other peers.
 
-**Finding peers**
+**Peer Discovery** enables a peer to find another present in the network that can act as its railing point (a way to connect to the rest of the network) or simply to know more peers in the network it can use to send and relay its messages. This can take several forms, for e.g. through a bootstrap peer list of more well known and location stable peers, multicastDNS to find peers in the proximity, through al tracker and others.
 
-**Opening a connection**
-  NAT Hole punching
-  stream multiplexing
-  protocol multiplexing on the application stack
+**Opening a connection** between two peers in a P2P network has an additional set of challenges due to the lack of public IP addressing. A set of NAT traversal techniques have to be applied, such as NAT hole punching and/or relay in case of both peers find themselves behind several layers of NAT or in symmetric NAT. Since opening a connection can be expensive and troublesome, it is require that we use the connection to its best potential and avoid opening new ones, this means that we should have a way to multiplex several streams of data on top of a single connection. Protocol multiplexing is done traditionally on the Port level, where each port represents a different protocol we can connect and talk to, but as mentioned, due to the requirement of traverse NAT, hole punching for several ports can be complicated or sometimes even impossible, this means that in order to successfully support multiple protocols, we have to execute the protocol multiplexing on user space, negotiating the protocol at the connection or stream level.
 
-**Resource Discovery**
+**Resource Discovery** typically defines how the P2P topology is defined, there are two main classes, unstructured and structured, where in the first the peers need some sort of centralization to hold a index for the resources available, resources that can be from data, capababilities, presence etc, or they query each peer individually for those resources, in the other hand, a structured network topology means that the organization of the resoures is implicit, not requiring any knowledge of the network organization beforehand to find a resource. The most known structured networks is what we know as DHT (Distributed Hash Tables), you can learn more about it at one of my blog posts, where I discuss this type of P2P networks in a more detailed manner, you can find it at: [Resource discovery through WebRTC - webrtc-ring](http://blog.daviddias.me/2014/12/20/webrtc-ring).
+
+# WebRTC Stack
