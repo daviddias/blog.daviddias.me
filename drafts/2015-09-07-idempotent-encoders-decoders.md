@@ -23,7 +23,7 @@ The expectation is that for discrete signals, finites sets of data, the codecs s
 I came to remember this expectation vialotion, when I had a problem to solve in JavaScript, the renaming of some keys to in a JavaScript object, for a Linked Data expander function. My first quick (and hacky) solution was to encode the object to a String and from that format, apply a Regular Expression to change all of the occurrences of a given key.
 
 ```JavaScript
-function remap-keys(key, newKey, obj)
+function remapKeys(key, newKey, obj)
   // so hacky
   var strObj = JSON.stringify(obj)
   strObj.replace(key, newKey)
