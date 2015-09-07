@@ -20,7 +20,7 @@ Having deterministic and idempotent codecs is not always possible, take a look a
 
 The expectation is that for discrete signals, finites sets of data, the codecs should be always deterministic and idempotent. Unfortunately this is not always true in the languages we have access today and the serializers and deserializers they offer. 
 
-I came to remember this expectation vialotion, when I had a problem to solve in JavaScript, the renaming of some keys to in a JavaScript object, for a Linked Data expander function. My first quick (and hacky) solution was to encode the object to a String and from that format, apply a Regular Expression to change all of the occurrences of a given key.
+I came to remember this expectation violation, when I needed to rename some of the keys present in a JavaScript object, for a Linked Data expander function. My first quick (and hacky) solution was to encode the object to a String and from that format, apply a Regular Expression to change all of the occurrences of a given key.
 
 ```JavaScript
 function remapKeys(key, newKey, obj)
