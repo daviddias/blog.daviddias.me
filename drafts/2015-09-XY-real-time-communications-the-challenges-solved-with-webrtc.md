@@ -61,3 +61,30 @@ There are 3 main questions we have to answer when developing a P2P Application a
 **Resource Discovery** typically defines how the P2P topology is defined, there are two main classes, unstructured and structured, where in the first the peers need some sort of centralization to hold a index for the resources available, resources that can be from data, capababilities, presence etc, or they query each peer individually for those resources, in the other hand, a structured network topology means that the organization of the resoures is implicit, not requiring any knowledge of the network organization beforehand to find a resource. The most known structured networks is what we know as DHT (Distributed Hash Tables), you can learn more about it at one of my blog posts, where I discuss this type of P2P networks in a more detailed manner, you can find it at: [Resource discovery through WebRTC - webrtc-ring](http://blog.daviddias.me/2014/12/20/webrtc-ring).
 
 # WebRTC Stack
+
+In this section, I'll go through how WebRTC handles the aspects that are transversal to P2P networks specifically, things like the Media Capture or the Statistics API will not be covered in this post.
+
+## Establishing a connection
+
+```
+image here of the pieces
+```
+
+```
+image here of the flow of a peer establishing a connection to another
+```
+  - Turn (Relay)
+  - Stun
+  - Signalling
+  - Identity
+  - Crypto Handshake
+
+## Transmiting data
+
+  - Stream multiplexing
+  - Protocol Multiplexing (also types of data transmitted)
+  - Reliability
+  - Congestion Control
+
+
+# Final Remarks
