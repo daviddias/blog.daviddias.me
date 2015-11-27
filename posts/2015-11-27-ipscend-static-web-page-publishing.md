@@ -2,7 +2,7 @@
 date: 2015-11-27 13:00:00 GMT
 slug: ipscend
 tags: IPFS
-title: ipscend - Static Web page/app publishing
+title: ipscend - Publish static web content to IPFS
 ---
 
 ![](/img/ipscend.png)
