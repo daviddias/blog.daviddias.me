@@ -82,7 +82,7 @@ image here of the flow of a peer establishing a connection to another
 ## Transmiting data
 
   - Stream multiplexing
-  - Protocol Multiplexing (also types of data transmitted)
+  - Protocol Multiplexing (-> types of data transmitted)
   - Reliability
   - Congestion Control
 
