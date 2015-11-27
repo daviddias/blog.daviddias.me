@@ -5,9 +5,9 @@ tags: IPFS
 title: ipscend - Publish static web content to IPFS
 ---
 
-![](/img/ipscend.png)
+[![](/img/ipscend.png)](https://github.com/diasdavid/ipscend)
 
-`ipscend` is a new tool to help developers publishing their static web content to IPFS and share it easily, while keeping history and more. It is heavily inspired in previous static web content publishing tools, like github pages and surge
+[`ipscend`](https://github.com/diasdavid/ipscend) is a new tool to help developers publishing their static web content to IPFS and share it easily, while keeping history and more. It is heavily inspired in previous static web content publishing tools, like github pages and surge
 
 ## Features
 
