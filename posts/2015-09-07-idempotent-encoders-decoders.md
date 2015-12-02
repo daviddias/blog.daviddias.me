@@ -10,10 +10,10 @@ Encoding and decoding data is a practice that has been present for a long time s
 A deterministic and idempotent encoding and decoding process should return the same data that was served for the encode function, once the decode function is applied. In essence, something like:
 
 ```JavaScript
-function isIdempotent(a) {
-  return a === decode(encode(a))
+function isIdempotent(codec, val) {
+  return val === decode(encode(val))
 }
-// should always return true
+// should always return true, for all encodable values val
 ```
 
 Having deterministic and idempotent codecs is not always possible, take a look at sound and video for example, capturing a continuous signal would require infinite memory storage (as the segment between two points in a continuum space has an infinite number of other points) and so, in order to capture, we have to encode 'samples' of the input signal and not the signal as a whole. This introduces losses to the signal and is typically known as lossy compression. Have in mind that there is some codecs for sound and video that are known as being lossless compression, simply because the deviations from the original signal don't represent a significant change to be relevant.
