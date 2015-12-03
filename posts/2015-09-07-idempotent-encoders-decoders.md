@@ -11,7 +11,7 @@ A deterministic and idempotent encoding and decoding process should return the s
 
 ```JavaScript
 function isIdempotent(codec, val) {
-  return val === decode(encode(val))
+  return val === codec.decode(codec.encode(val))
 }
 // should always return true, for all encodable values val
 ```
