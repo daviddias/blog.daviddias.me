@@ -7,15 +7,15 @@ title: ipscend - Publish static web content to IPFS
 
 [![](/img/ipscend.png)](https://github.com/diasdavid/ipscend)
 
-[`ipscend`](https://github.com/diasdavid/ipscend) is a new tool to help developers publishing their static web content to IPFS and share it easily, while keeping history and more. It is heavily inspired in previous static web content publishing tools, like github pages and surge
+[`ipscend`](https://github.com/diasdavid/ipscend) is a new tool to help developers publish their static web content to IPFS and share it easily, while keeping history and more. It is heavily inspired by previous static web content publishing tools, like GitHub Pages and surge.
 
 ## Features
 
-Currently, `ipscend` offers a set of features, accessible through a CLI, installable through npm (`npm i -g ipscend`) that enable a simple workflow to work in your Web page/app and publish it to the IPFS network.
+Currently, `ipscend` offers a set of features, accessible through a CLI, and installable through npm (`npm i -g ipscend`), which enable a simple workflow for working in your Web page/app and publishing it to the IPFS network.
 
 - `ipscend browse` - Opens the last published version of your application in the browser.
 - `ipscend init` - Initializes your project. Asks for the folder where the web application will be available and stores an `ipscend.json` object in your current path to store all the metadata it generates, such as published versions and taken screenshots.
-- `ipscend preview` - Serves your application on a local static file server, so that you can try it out before you feel ready to publish it. 
+- `ipscend preview` - Serves your application on a local static file server, so that you can try it out before you feel ready to publish it.
 - `ipscend publish` - Publishes the current state of your application to IPFS and stores a reference to it.
 - `ipscend screenshot` - Opens a screenshot preview of all the published versions of your app. In order to generate the screenshots, you must first run `ipscend screenshot --gen`.
 ![](http://zippy.gfycat.com/TameDampKob.gif)
@@ -49,7 +49,7 @@ $ cat ipscend.json
 
 ## Workflow
 
-In order to get started, all you need to do is init your ipscend in your web page/app project:
+In order to get started, all you need to do is initiate your ipscend in your web page/app project:
 
 ```bash
 $ ipscend init
@@ -80,19 +80,19 @@ $ cat ipscend.json
   "path": "src/public"
 ```
 
-Grab that hash and share it with your friends, by sending them a link to ipfs.io, appending /ipfs/Hash, (e.g.  https:/ipfs.io/ipfs/ QmVNgdUoBQHiBhSeDe2z8LttJaDZq7JZi17sR1SPnJmjMh)
+Grab that hash and share it with your friends, by sending them a link to ipfs.io, appending "/ipfs/Hash" (e.g.  https:/ipfs.io/ipfs/ QmVNgdUoBQHiBhSeDe2z8LttJaDZq7JZi17sR1SPnJmjMh).
 
-If you want to use your awesome.domain.com to load your page from IPFS, you can check how to do it now at https://github.com/diasdavid/ipscend#use-ipfs-to-host-your-webpage-using-a-standard-domain-includes-cool-dns-trick
+If you want to use your awesome.domain.com to load your page from IPFS, you can check how to do it now at https://github.com/diasdavid/ipscend#use-ipfs-to-host-your-webpage-using-a-standard-domain-includes-cool-dns-trick.
 
 ## Awesome (FUTURE)!
 
-`ipscend` is still on its humble beginnings, some of the ideas and plans to build in the future are:
+`ipscend` is still in its humble beginnings. Some of the ideas and plans to build in the future include being able to:
 
-- Extract the version from the VCS itself (https://github.com/ipfs/notes/issues/23), so that every commit could be a different working version, such as you would test every commit in your CI.
-- Able to roll back in history, following the 'time machine' analogy.
-- Update your DNS provider automatically, avoiding to have to use an external tool like [`dnslink-deploy`](https://github.com/ipfs/dnslink-deploy)
-- Enable reviewers to write notes
-- Take screenshots in every browser version, so that we can use the timeline to see if there was any regression at a point in time, which might happen in a specific browser
-- moaaaar :D If you have ideas or want to contribute, ipscend is fully MIT Licensed, feel free to open a issue or PR on https://github.com/diasdavid/ipscend
+- Extract the version from the VCS itself (https://github.com/ipfs/notes/issues/23), so that every commit can be a different working version, allowing you to test every commit in your CI.
+- Roll back history, following the 'time machine' analogy.
+- Update your DNS provider automatically, avoiding having to use an external tool like [`dnslink-deploy`](https://github.com/ipfs/dnslink-deploy).
+- Enable reviewers to write notes.
+- Take screenshots in every browser version, so that we can use the timeline to see if there was any regression at a point in time, which might happen in a specific browser.
+- moaaaar :D If you have ideas or want to contribute, ipscend is fully MIT Licensed, so feel free to open a issue or PR on https://github.com/diasdavid/ipscend.
 
 A big thank you to [Andrés Gutgon](https://github.com/andresgutgon) who made the screenshot preview look [really good](https://github.com/diasdavid/ipscend-screenshot-visualizer/pull/1)
