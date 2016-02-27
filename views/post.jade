@@ -5,9 +5,9 @@ block body
     include header
     article(class=type)
       .row
-        a.permalink(href="")= locals.postData.formattedDate       
+        a.permalink(href="")= locals.postData.formattedDate
         .postTitle
-          h1(style="margin-top: 0;")= locals.postData.title         
+          h1(style="margin-top: 0;")= locals.postData.title
         .large-2.hide-for-small.columns
       .row
         .postContent!= locals.postData.postBody

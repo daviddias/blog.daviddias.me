@@ -8,5 +8,5 @@
   "rssUrl": "http://blog.daviddias.me/rss",
   "postDir": "posts",
   "blogHome": "/",
-  "maxPosts": 10
+  "maxPosts": 3
 }
