@@ -1,5 +1,5 @@
 ---
-date: 2016-02-09 15:00:00 GMT
+date: 2016-02-28 15:00:00 GMT
 slug: webrtc-explorer-2-0-0-alpha-release
 tags: WebRTC, JavaScript
 title: WebRTC Explorer 2.0.0 alpha release
