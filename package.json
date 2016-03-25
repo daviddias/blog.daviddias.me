@@ -1,8 +1,11 @@
 {
   "name": "blog",
-  "version": "0.0.0",
-  "main": "index.js",
-  "description": "",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "description": "David Dias' blog",
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "dependencies": {
     "bumble": "^2.1.0",
     "electricfence": "1.1.0",
@@ -17,6 +20,6 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "0.10.x"
+    "node": "4.x.x"
   }
 }
