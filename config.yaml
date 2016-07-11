@@ -1,0 +1,28 @@
+title: "David Dias' Blog"
+baseURL: "/"
+languageCode: "en-us"
+canonifyURLs: true
+relativeURLs: true
+enableRobotsTXT: true
+contentDir: "content"
+params:
+  title: "Hi! I'm David."
+  subtitle: "I typically write here."
+  copyright: "Released under the MIT license."
+
+  themeColor: "green"
+  googleAnalytics : "UA-42568283-2"
+
+  # SEO
+  name: "David Dias"
+  bio: "I'm David, a P2P Software Engineer and Researcher at Protocol Labs. M.Sc from University of Lisbon. Creator and curator of LXJS and Startup Scholarship."
+  description: "This blog includes posts from my research and things I learn"
+  location: "Lisbon, Portugal"
+  twitter: "davidias"
+  github: "diasdavid"
+
+  # Customize or translate the strings
+  keepReadingStr: "Read this post"
+  backtotopStr: "Back to top"
+  shareStr: "Share"
+  pageNotFoundTitle: "404 - Page not found"
