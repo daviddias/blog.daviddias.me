@@ -8,7 +8,7 @@ contentDir: "content"
 params:
   title: "Hi! I'm David."
   subtitle: "I typically write here."
-  copyright: "Released under the MIT license."
+  copyright: ""
 
   themeColor: "green"
   googleAnalytics : "UA-42568283-2"

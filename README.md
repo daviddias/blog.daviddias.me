@@ -5,6 +5,8 @@ David Dias' Blog
 
 This is my blog, where I write stuff. It uses `hugo`.
 
+Hosted on IPFS :D
+
 # Usage
 
 ```
